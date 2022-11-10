@@ -58,7 +58,7 @@ class GUI {
 	private static void addGroupOfComponents(JPanel container) {
 
 		JLabel dayNameLabel = new JLabel(Calendar.weekDay.getDayOfWeek() + "");
-		JLabel numOfMonthLabel = new JLabel(Calendar.weekDay.getDayOfMonth() + " " + Calendar.date.getMonth());
+		JLabel numOfMonthLabel = new JLabel(Calendar.weekDay.getDayOfMonth() + " " + Calendar.weekDay.getMonth());
 		dayNameLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		numOfMonthLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		dayNameLabel.setFont(new Font("Sans-serif", Font.BOLD, 20));
@@ -71,10 +71,6 @@ class GUI {
 		}
 
 		Calendar.weekDay = Calendar.weekDay.plusDays(1);
-
-		if (Calendar.weekDay.getDayOfMonth() == 1) {
-			Calendar.date = Calendar.date.plusMonths(1);
-		}
 
 		JTextField textField = new JTextField("", 100);
 		JButton addButton = new JButton("Add Event");
